@@ -1,5 +1,13 @@
 [application]
 
+[bundle]
+icon = ["icons/icon.png"]
+
+[android]
+package = "com.geoconnect.app"
+version_name = "0.1.0"
+version_code = 1
+
 [web.app]
 
 # HTML title tag content

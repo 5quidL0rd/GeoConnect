@@ -1,4 +1,6 @@
 use dioxus::prelude::*;
+use crate::loading::Loading;
+use crate::back_button::BackButton;
 
 #[derive(Debug, Clone, sqlx::FromRow)]
 struct PlaceInfo {
@@ -41,11 +43,16 @@ pub fn Place(id: i32) -> Element {
         result
     });
 
-    rsx! {
-        div {
-            class: "place-page",
+    let place_data = place();
+    let highlights_data = highlights();
 
-            if let Some(place) = place() {
+    rsx! {
+        if let (Some(place), Some(highlights)) = (place_data, highlights_data) {
+            div {
+                class: "place-page",
+
+                BackButton {}
+
                 div {
                     class: "place-hero",
                     span { class: "place-kind", "{place.kind}" }
@@ -53,9 +60,7 @@ pub fn Place(id: i32) -> Element {
                     p { class: "place-tagline", "{place.tagline}" }
                     p { class: "place-overview", "{place.overview}" }
                 }
-            }
 
-            if let Some(highlights) = highlights() {
                 div {
                     class: "place-highlights",
                     for highlight in highlights {
@@ -68,6 +73,8 @@ pub fn Place(id: i32) -> Element {
                     }
                 }
             }
+        } else {
+            Loading {}
         }
     }
 }

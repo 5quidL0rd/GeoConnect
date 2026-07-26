@@ -4,6 +4,10 @@ mod regions;
 mod flowchart;
 mod place;
 mod place_nav;
+mod loading;
+mod back_button;
+mod compare;
+mod travel_prep;
 use map::JapanMap;
 use place::Place;
 mod hokkaido;
@@ -60,11 +64,9 @@ const HEADER_SVG: Asset = asset!("/assets/header.svg");
 
 #[tokio::main]
 async fn main() {
-    dotenvy::dotenv().ok();
-    let database_url = std::env::var("DATABASE_URL")
-        .expect("DATABASE_URL not set in .env");
+    let database_url = env!("DATABASE_URL");
 
-    let pool = sqlx::PgPool::connect(&database_url)
+    let pool = sqlx::PgPool::connect(database_url)
         .await
         .expect("Database connection failed");
 

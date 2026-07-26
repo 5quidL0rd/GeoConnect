@@ -202,15 +202,21 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 0 16px;
 }
 
 .map-image-wrapper {
     position: relative;
+    width: 100%;
+    max-width: 831px;
 }
 
 .japan-map-img {
     position: relative;
     z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
 
     transition:
         filter 0.22s ease,
@@ -732,5 +738,148 @@ a.map-hotspot.kyushu-hotspot {
 @media (max-width: 700px) {
     .place-hero {
         padding: 20px;
+    }
+}
+
+/* ===== Back button ===== */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    margin-bottom: 16px;
+    padding: 8px 18px 8px 14px;
+    background-color: var(--color-accent-bg);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 0.92rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-btn-icon {
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: translateX(-2px);
+}
+
+/* ===== Loading screen (torii gate) ===== */
+
+.loading-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 20px;
+}
+
+.loading-torii-wrap {
+    position: relative;
+    width: 160px;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-glow {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(224, 78, 65, 0.35) 0%, rgba(224, 78, 65, 0) 70%);
+    border-radius: 50%;
+    animation: torii-glow-pulse 2.4s ease-in-out infinite;
+}
+
+.loading-portal-light {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 46px;
+    height: 12px;
+    margin-left: -23px;
+    background: radial-gradient(ellipse, rgba(255, 214, 130, 0.9) 0%, rgba(255, 214, 130, 0) 75%);
+    filter: blur(2px);
+    animation: portal-sweep 2.4s ease-in-out infinite;
+}
+
+.loading-torii {
+    position: relative;
+    z-index: 1;
+    width: 140px;
+    height: 126px;
+    animation: torii-bob 2.4s ease-in-out infinite;
+}
+
+.torii-part {
+    fill: #c0392b;
+    stroke: #8f2a1f;
+    stroke-width: 1;
+}
+
+.loading-text {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: loading-text-fade 1.8s ease-in-out infinite;
+}
+
+@keyframes torii-glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.92);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes torii-bob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes portal-sweep {
+    0% {
+        top: 24%;
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        top: 78%;
+        opacity: 0;
+    }
+}
+
+@keyframes loading-text-fade {
+    0%, 100% {
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 1;
     }
 }
