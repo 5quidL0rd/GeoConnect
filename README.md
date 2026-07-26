@@ -2,6 +2,10 @@
 
 A mobile app for American-Japanese cultural exchange. Users are able to click on Japan's 8 regions, read cultural and historical information about each one, and compare US vs. Japanese customs with each other. The app is being built with Dioxus (Rust) for the UI and a PostgreSQL database (hosted on Railway).
 
+## Download the Android app
+
+**[Download GeoConnect for Android](https://github.com/5quidL0rd/GeoConnect/releases/tag/android-v0.1.0)** — grab `GeoConnect.apk` from the release, open it on your phone, and allow "install unknown apps" when prompted (normal for a sideloaded app, not a sign of a problem).
+
 ## Repository
 
 https://github.com/logerator/GeoConnect
