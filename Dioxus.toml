@@ -1,7 +1,10 @@
 [application]
 
 [bundle]
+identifier = "com.geoconnect.app"
+publisher = "GeoConnect"
 icon = ["icons/icon.png"]
+short_description = "A cultural exchange guide comparing Japan's regions with the USA."
 
 [android]
 package = "com.geoconnect.app"
