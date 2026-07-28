@@ -8,7 +8,7 @@ A mobile app for American-Japanese cultural exchange. Users are able to click on
 
 ## Repository
 
-https://github.com/logerator/GeoConnect
+[https://github.com/logerator/GeoConnect](https://github.com/5quidL0rd/GeoConnect)
 
 ## Requirements
 
