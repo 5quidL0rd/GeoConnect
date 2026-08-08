@@ -8,7 +8,7 @@ A mobile app for American-Japanese cultural exchange. Users are able to click on
 
 ## Repository
 
-https://github.com/logerator/GeoConnect
+[https://github.com/logerator/GeoConnect](https://github.com/5quidL0rd/GeoConnect)
 
 ## Requirements
 
@@ -51,6 +51,5 @@ regions - the 8 regions of Japan (id, name, overview)
 categories - content topics like Food, Etiquette, Festivals, History (id, name)
 facts - cultural/historical content per region and category (id, region_id, category_id, title, body)
 comparisons - US vs. Japanese custom comparisons, optionally tied to a region (id, category_id, region_id, title, us_practice, jp_practice, us_region, key_difference)
-places - notable places to visit per region (id, region_id, name, kind, tagline, overview)
-place_highlights - place specific information (id, place_id, category, title, body)
+places - notable places to visit per region (id, region_id, name, kind)
 travel_prep - region-specific travel preparation guidance (id, region_id, category, title, body)
